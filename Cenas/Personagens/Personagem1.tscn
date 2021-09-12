@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Cenas/Personagens/IMG_Naruto/naruto_walk.png" type="Texture" id=1]
+[ext_resource path="res://Cenas/Personagens/IMG_Naruto/naruto_idle.png" type="Texture" id=2]
+[ext_resource path="res://Cenas/Personagens/Script/Script_personagem_1.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "andando"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Corpo_Personagem/naruto_idle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Corpo_Personagem/naruto_idle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Corpo_Personagem/naruto_idle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "parado"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Corpo_Personagem/naruto_idle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Corpo_Personagem/naruto_idle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Corpo_Personagem/naruto_idle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Personagem_1" type="Node2D"]
+
+[node name="Personagem_1" type="KinematicBody2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="naruto_idle" type="Sprite" parent="Personagem_1"]
+texture = ExtResource( 1 )
+hframes = 6
+
+[node name="colisao" type="CollisionShape2D" parent="Personagem_1"]
+shape = SubResource( 1 )
+
+[node name="anim" type="AnimationPlayer" parent="Personagem_1"]
+autoplay = "parado"
+playback_speed = 1.2
+anims/andando = SubResource( 2 )
+anims/parado = SubResource( 3 )
