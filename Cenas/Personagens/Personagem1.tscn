@@ -90,6 +90,7 @@ tracks/2/keys = {
 [node name="Personagem_1" type="Node2D"]
 
 [node name="Personagem_1" type="KinematicBody2D" parent="."]
+position = Vector2( 148.039, 92.7174 )
 script = ExtResource( 3 )
 
 [node name="naruto_idle" type="Sprite" parent="Personagem_1"]
