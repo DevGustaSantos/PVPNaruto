@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Cenas/Personagens/Generico/cena/PersonagemGenerico.gd" type="Script" id=1]
+
+[node name="personagem_generico" type="Node2D"]
+script = ExtResource( 1 )

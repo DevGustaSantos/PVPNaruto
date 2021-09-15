@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/naruto_idle.png-56ab7610f1267832a6c8765126ed994d.stex"
+path="res://.import/naruto_idle.png-168695330c4005285baf098213d88b30.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenas/Personagens/IMG_Naruto/naruto_idle.png"
-dest_files=[ "res://.import/naruto_idle.png-56ab7610f1267832a6c8765126ed994d.stex" ]
+source_file="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_idle.png"
+dest_files=[ "res://.import/naruto_idle.png-168695330c4005285baf098213d88b30.stex" ]
 
 [params]
 
