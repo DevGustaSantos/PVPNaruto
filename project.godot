@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "PersonagemGenerico",
+"language": "GDScript",
+"path": "res://Cenas/Personagens/Generico/cena/PersonagemGenerico.gd"
+} ]
+_global_script_class_icons={
+"PersonagemGenerico": ""
+}
+
 [application]
 
 config/name="Projeto Faculdade 2021"
