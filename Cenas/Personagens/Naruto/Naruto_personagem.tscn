@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Cenas/Personagens/Naruto/script/script_Naruto.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_idle.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=1]
+height = 26.92
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 186.237, 10 )
 
 [node name="Naruto" type="Node2D"]
 
 [node name="Personagem_Naruto" type="KinematicBody2D" parent="."]
+collision_mask = 14
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="img_naruto" type="Sprite" parent="Personagem_Naruto"]
 texture = ExtResource( 2 )
@@ -17,5 +25,14 @@ hframes = 4
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Naruto"]
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="Personagem_Naruto"]
+[node name="camera" type="Camera2D" parent="Personagem_Naruto"]
 current = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 74.0836 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
