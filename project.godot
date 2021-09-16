@@ -12,16 +12,26 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "PersonagemGenerico",
 "language": "GDScript",
-"path": "res://Cenas/Personagens/Generico/cena/PersonagemGenerico.gd"
+"path": "res://Cenas/Personagens/Scripts gerais/script_PersonagemGenerico.gd"
+}, {
+"base": "Node",
+"class": "RegrasDoMundo",
+"language": "GDScript",
+"path": "res://Script Global/Script_global.gd"
 } ]
 _global_script_class_icons={
-"PersonagemGenerico": ""
+"PersonagemGenerico": "",
+"RegrasDoMundo": ""
 }
 
 [application]
 
 config/name="Projeto Faculdade 2021"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Script Global/Script_global.gd"
 
 [display]
 
