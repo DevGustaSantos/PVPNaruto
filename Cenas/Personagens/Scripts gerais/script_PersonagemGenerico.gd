@@ -12,8 +12,8 @@ func _movimento_do_personagem(delta):
 	#Aplicando gravidade
 	Movimento.y += Global.Gravidade * delta 
 
-#	Movimentação esquerda e direita do personagem.
-#	A variavel "mover_direcoes" retorna o valor
+#	 Movimentação esquerda e direita do personagem.
+#	 A variavel "mover_direcoes" retorna o valor
 #	-1 = para a esquerda 
 #	 0 = para quando não estiver movendo
 #	 1 = para a direita
