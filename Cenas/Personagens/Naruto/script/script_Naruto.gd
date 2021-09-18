@@ -3,7 +3,7 @@ extends PersonagemGenerico
 
 func _physics_process(delta):
 	
-	if is_on_floor() && int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")):
+	if is_on_floor() && self.Movimento.x:
 		$Anima.play("correndo")
 		
 	elif not $Anima.current_animation == "pulando" && is_on_floor():
@@ -15,10 +15,6 @@ func _physics_process(delta):
 	elif not is_on_floor() && not $Anima.current_animation == "pulando":
 		$Anima.play("caindo")
 	
-	
-	
-	
-
 
 func _on_Anima_animation_finished(anim_name):
 

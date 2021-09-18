@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Cenas/Personagens/Naruto/script/script_Naruto.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_shuriken.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_jump.png" type="Texture" id=5]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_run.png" type="Texture" id=6]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_fall.png" type="Texture" id=7]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone2.png" type="Texture" id=8]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone0.png" type="Texture" id=9]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone3.png" type="Texture" id=10]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone1.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 26.92
@@ -50,6 +54,46 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "ataque_clone"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("img_naruto:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("img_naruto:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("img_naruto:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -133,6 +177,46 @@ tracks/2/keys = {
 "values": [ 0, 1 ]
 }
 
+[sub_resource type="Animation" id=10]
+resource_name = "clone_voando"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("img_naruto:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("img_naruto:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("img_naruto:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
 [sub_resource type="Animation" id=5]
 resource_name = "correndo"
 length = 0.6
@@ -172,6 +256,86 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "fumaca"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("img_naruto:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("img_naruto:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("img_naruto:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "jutsu_clone"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("img_naruto:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("img_naruto:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("img_naruto:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -281,10 +445,12 @@ __meta__ = {
 Forca_do_pulo = -1000
 
 [node name="img_naruto" type="Sprite" parent="Personagem_Naruto"]
-texture = ExtResource( 7 )
-hframes = 2
+texture = ExtResource( 11 )
+hframes = 5
+frame = 4
 
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Naruto"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="camera" type="Camera2D" parent="Personagem_Naruto"]
@@ -294,9 +460,13 @@ current = true
 autoplay = "parado"
 playback_speed = 0.7
 anims/andando = SubResource( 2 )
+anims/ataque_clone = SubResource( 9 )
 anims/atk_shuriken = SubResource( 3 )
 anims/caindo = SubResource( 4 )
+anims/clone_voando = SubResource( 10 )
 anims/correndo = SubResource( 5 )
+anims/fumaca = SubResource( 11 )
+anims/jutsu_clone = SubResource( 12 )
 anims/parado = SubResource( 6 )
 anims/pulando = SubResource( 7 )
 
