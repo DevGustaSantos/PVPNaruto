@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Projeto Faculdade 2021"
+run/main_scene="res://Cenas/Personagens/Sakura/Sakura_Personagem.tscn"
 config/icon="res://icon.png"
 
 [autoload]
