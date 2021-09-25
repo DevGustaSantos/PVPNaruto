@@ -113,7 +113,7 @@ tracks/3/keys = {
 "values": [ 0.7 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=4]
 resource_name = "fumaca"
 length = 0.5
 tracks/0/type = "value"
@@ -169,6 +169,8 @@ tracks/3/keys = {
 position = Vector2( 125.865, 73.5393 )
 
 [node name="Clone" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 10
 script = ExtResource( 1 )
 
 [node name="Img_naruto" type="Sprite" parent="Clone"]
@@ -186,7 +188,7 @@ shape = SubResource( 1 )
 [node name="Anima" type="AnimationPlayer" parent="Clone"]
 anims/ataque_clone = SubResource( 2 )
 anims/clone_voando = SubResource( 3 )
-anims/fumaca = SubResource( 13 )
+anims/fumaca = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="Clone"]
 autostart = true
