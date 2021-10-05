@@ -12,9 +12,11 @@ func _process(delta):
 
 # PRECISO DE AJUDA NESSA PARTE PARA ACERTAR O INIMIGO
 func _on_Clone_body_entered(body):
-#	if body.name_group == "Personagem_Naruto":
-#		mov.x = 0
-#		$Anima.play("ataque_clone")
+	if(body):
+		mov.x = 0
+		$Timer.queue_free()
+		$Clone_corpo.queue_free()
+		$Anima.play("ataque_clone")
 	pass
 	
 
