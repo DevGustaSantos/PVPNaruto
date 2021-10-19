@@ -1,60 +1,95 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada3.png" type="Texture" id=1]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada2.png" type="Texture" id=2]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada5.png" type="Texture" id=3]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada4.png" type="Texture" id=4]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada1.png" type="Texture" id=5]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/sakura_andando.png" type="Texture" id=6]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Parada/parada6.png" type="Texture" id=7]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando1.png" type="Texture" id=8]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Correndo/correndo5.png" type="Texture" id=9]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Correndo/correndo1.png" type="Texture" id=10]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Correndo/correndo2.png" type="Texture" id=11]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Correndo/correndo3.png" type="Texture" id=12]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Correndo/correndo4.png" type="Texture" id=13]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando2.png" type="Texture" id=14]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando3.png" type="Texture" id=15]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando6.png" type="Texture" id=16]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando4.png" type="Texture" id=17]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Andando/andando5.png" type="Texture" id=18]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando2.png" type="Texture" id=19]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando4.png" type="Texture" id=20]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando5.png" type="Texture" id=21]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando5.1.png" type="Texture" id=22]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando1.png" type="Texture" id=23]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando6.png" type="Texture" id=24]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando3.png" type="Texture" id=25]
-[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sakura Pulando/pulando7.png" type="Texture" id=26]
+[ext_resource path="res://Cenas/Personagens/Sakura/imagens/Sprite_Inteira.png" type="Texture" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 26.92
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 186.237, 10 )
+[sub_resource type="Animation" id=2]
+resource_name = "Andando"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sakura:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 18, 82, 28, 48 ), Rect2( 52, 81, 19, 48 ), Rect2( 78, 83, 21, 47 ), Rect2( 108, 82, 27, 50 ), Rect2( 147, 82, 24, 49 ), Rect2( 181, 82, 18, 47 ) ]
+}
 
-[sub_resource type="SpriteFrames" id=3]
-animations = [ {
-"frames": [ ExtResource( 8 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "andando",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "correndo",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 7 ) ],
-"loop": false,
-"name": "parada",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 23 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 26 ), ExtResource( 21 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "pulando",
-"speed": 7.0
-} ]
+[sub_resource type="Animation" id=3]
+resource_name = "Correndo"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sakura:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 20, 148, 42, 42 ), Rect2( 76, 148, 33, 43 ), Rect2( 117, 150, 44, 41 ), Rect2( 168, 149, 47, 41 ), Rect2( 226, 146, 39, 43 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Morrendo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sakura:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 226, 146, 39, 43 ), Rect2( 64, 753, 29, 43 ), Rect2( 99, 765, 54, 30 ), Rect2( 158, 774, 55, 20 ), Rect2( 220, 766, 54, 31 ), Rect2( 282, 760, 62, 35 ), Rect2( 350, 766, 62, 29 ), Rect2( 420, 776, 74, 18 ), Rect2( 504, 768, 59, 25 ), Rect2( 573, 769, 50, 25 ), Rect2( 637, 775, 51, 17 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Parado"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sakura:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 25, 17, 27, 46 ), Rect2( 70, 19, 31, 45 ), Rect2( 121, 19, 31, 44 ), Rect2( 167, 19, 31, 45 ), Rect2( 215, 17, 27, 46 ), Rect2( 264, 17, 28, 48 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Vitória"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sakura:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 24, 1120, 28, 47 ), Rect2( 68, 1083, 47, 83 ), Rect2( 124, 1081, 53, 86 ), Rect2( 186, 1083, 53, 87 ), Rect2( 250, 1081, 53, 87 ), Rect2( 307, 1082, 53, 87 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 186.237, 10 )
 
 [node name="Sakura" type="Node2D"]
 
@@ -62,18 +97,24 @@ animations = [ {
 collision_mask = 14
 
 [node name="Sakura" type="Sprite" parent="Personagem_Sakura"]
-position = Vector2( -0.00169373, 2.49999 )
-scale = Vector2( 0.845634, 0.601769 )
-texture = ExtResource( 6 )
-hframes = 5
-frame = 2
-region_rect = Rect2( 197, 15, 50, 93 )
+position = Vector2( 0.705421, -0.328444 )
+scale = Vector2( 1.04362, 0.882617 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 68, 1083, 47, 83 )
 
 [node name="colisao" type="CollisionShape2D" parent="Personagem_Sakura"]
 shape = SubResource( 1 )
 
 [node name="camera" type="Camera2D" parent="Personagem_Sakura"]
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem_Sakura"]
+anims/Andando = SubResource( 2 )
+anims/Correndo = SubResource( 3 )
+anims/Morrendo = SubResource( 4 )
+anims/Parado = SubResource( 5 )
+"anims/Vitória" = SubResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0, 74.0836 )
@@ -82,10 +123,4 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -0.121315, -1.12132 )
-scale = Vector2( 1.01911, 1.02668 )
-frames = SubResource( 3 )
-animation = "pulando"
+shape = SubResource( 7 )
