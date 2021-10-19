@@ -49,7 +49,7 @@ func _animacoes_basicas(delta):
 		if is_on_floor() && Input.is_action_just_pressed("ui_up"):
 			$Anima.play("pulando")
 			
-		elif not is_on_floor() && not $Anima.current_animation == "pulando" or not $Anima.current_animation == "parado" :
+		elif not is_on_floor() && not $Anima.current_animation == "pulando" and not $Anima.current_animation == "parado" :
 			$Anima.play("caindo")
 			
 #			-----Jutsu clone-----

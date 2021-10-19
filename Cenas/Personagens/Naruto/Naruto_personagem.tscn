@@ -771,9 +771,9 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
-[sub_resource type="RectangleShape2D" id=18]
-
 [sub_resource type="RectangleShape2D" id=17]
+
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 186.237, 10 )
 
 [sub_resource type="RectangleShape2D" id=19]
@@ -846,14 +846,14 @@ __meta__ = {
 [node name="Colli_dano" type="CollisionShape2D" parent="Personagem_Naruto/Recebe_dano"]
 modulate = Color( 0.600917, 0.598206, 0.945313, 1 )
 scale = Vector2( 0.993695, 0.885423 )
-shape = SubResource( 18 )
+shape = SubResource( 17 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0, 74.0836 )
 collision_layer = 2147483656
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 290.385, -133.081 )
