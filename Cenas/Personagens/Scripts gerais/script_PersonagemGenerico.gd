@@ -10,8 +10,13 @@ export var Controle_do_giro = true
 #---- FUNÇÕES ----#
 func _movimento_do_personagem(delta):
 	#Aplicando gravidade
-	Movimento.y += Global.Gravidade * delta 
-
+	if(not is_on_floor()):
+		Movimento.y += Global.Gravidade * delta
+	else:
+		Movimento.y = Global.Gravidade * delta
+	
+	
+		
 #	 Movimentação esquerda e direita do personagem.
 #	 A variavel "mover_direcoes" retorna o valor
 #	-1 = para a esquerda 

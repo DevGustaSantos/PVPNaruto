@@ -22,11 +22,14 @@ func _combos():
 		
 		pass
 	
-
-
+#_______________Reviver temporario para testes___________
+func _reviver():
+	if($".".global_position.y > 266):
+		get_tree().change_scene("res://Cenas/Cenario/Cenario.tscn")
+		
+	pass
 func _animacoes_basicas(delta):
-	
-#	print(self.Velocidade_de_movimento)
+
 	if (not ataque):
 	#	-----Controle de correr, andar e parar-----
 		if(Input.is_action_pressed("correr")):
@@ -115,8 +118,11 @@ func _animacoes_basicas(delta):
 #			pass
 	
 func _physics_process(delta):
+	
+	_reviver()
 	_animacoes_basicas(delta)
 	_combos()
+	
 	pass
 	
 

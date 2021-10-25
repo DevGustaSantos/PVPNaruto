@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Cenas/Personagens/Naruto/script/script_Naruto.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_shuriken.png" type="Texture" id=2]
@@ -59,7 +59,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 10, 21.4399 )
+extents = Vector2( 10, 21.8849 )
 
 [sub_resource type="Animation" id=3]
 length = 0.6
@@ -773,25 +773,18 @@ tracks/2/keys = {
 
 [sub_resource type="RectangleShape2D" id=17]
 
-[sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 186.237, 10 )
-
-[sub_resource type="RectangleShape2D" id=19]
-extents = Vector2( 0.227443, 7.57547 )
-
 [node name="Naruto" type="Node2D"]
 position = Vector2( 176.45, 23.9729 )
 
 [node name="Personagem_Naruto" type="KinematicBody2D" parent="."]
-collision_mask = 14
+collision_mask = 13
 script = ExtResource( 1 )
 Forca_do_pulo = -1000
 
 [node name="img_naruto" type="Sprite" parent="Personagem_Naruto"]
 position = Vector2( -2, -15.9099 )
-texture = ExtResource( 2 )
-hframes = 3
-frame = 2
+texture = ExtResource( 4 )
+hframes = 6
 
 [node name="fumaca" type="AnimationPlayer" parent="Personagem_Naruto"]
 anims/fumaca = SubResource( 1 )
@@ -807,12 +800,25 @@ texture = ExtResource( 11 )
 hframes = 5
 
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Naruto"]
-visible = false
-position = Vector2( 0, 2 )
+position = Vector2( 0.44545, -0.89542 )
 shape = SubResource( 2 )
 
 [node name="camera" type="Camera2D" parent="Personagem_Naruto"]
 current = true
+limit_left = 0
+limit_right = 2272
+limit_bottom = 266
+limit_smoothed = true
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.5
+drag_margin_top = 0.5
+drag_margin_right = 0.5
+drag_margin_bottom = 0.5
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Anima" type="AnimationPlayer" parent="Personagem_Naruto"]
 autoplay = "parado"
@@ -847,22 +853,5 @@ __meta__ = {
 modulate = Color( 0.600917, 0.598206, 0.945313, 1 )
 scale = Vector2( 0.993695, 0.885423 )
 shape = SubResource( 17 )
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0, 74.0836 )
-collision_layer = 2147483656
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 18 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 290.385, -133.081 )
-scale = Vector2( -62.1271, -20.4642 )
-shape = SubResource( 19 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -294.418, -128.591 )
-scale = Vector2( -62.1271, -20.4642 )
-shape = SubResource( 19 )
 [connection signal="animation_finished" from="Personagem_Naruto/Anima" to="Personagem_Naruto" method="_on_Anima_animation_finished"]
 [connection signal="area_entered" from="Personagem_Naruto/Recebe_dano" to="Personagem_Naruto" method="_on_Recebe_dano_area_entered"]
