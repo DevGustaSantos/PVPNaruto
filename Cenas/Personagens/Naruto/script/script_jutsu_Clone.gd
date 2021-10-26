@@ -39,6 +39,7 @@ func _on_Anima_animation_finished(anim_name):
 func _on_Timer_timeout():
 	mov.x = 0
 	$Anima.play("ataque_clone")
+	$Clone_corpo.queue_free()
 	
 #	$".".queue_free()
 #	queue_free()
