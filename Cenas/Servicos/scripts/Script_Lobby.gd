@@ -1,27 +1,23 @@
-extends Node2D
+extends Control
 
-func _ready():
-	get_tree().connect("network_peer_connected",self,"_player_connected")
-
-#Inicia quando o botão host for precionado
-#o host fica como servidor
-func _on_ButtonHost_pressed():
-	var net = NetworkedMultiplayerENet.new()
-	net.create_server(6969, 2)
-	get_tree().set_network_peer(net)
-	print("hosting")
-
-#Inicia quando o botão host for precionado
-#Se conecta ao host(Servidor).
-func _on_ButtonJoin_pressed():
-	var net = NetworkedMultiplayerENet.new()
-	net.create_client("127.0.0.1", 6969)
-	get_tree().set_network_peer(net)
-	pass # Replace with function body.
+var player_name = ""
 
 
-func _player_connected(id):
-	Global.player2_id = id
-	var game = preload("res://Cenas/Personagens/Naruto/Naruto_personagem.tscn").instance()
-	get_tree().get_root().add_child(game)
-	hide()
+func _on_create_pressed():
+	player_name = $nickname.text
+	if player_name == "":
+		return
+
+	Network.create_server(player_name)
+	_load_game()
+
+func _on_join_pressed():
+	player_name = $nickname.text
+	if player_name == "":
+		return
+
+	Network.connect_to_server(player_name)
+	_load_game()
+
+func _load_game():
+	get_tree().change_scene("res://Cenas/cenarioTeste.tscn")

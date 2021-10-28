@@ -32,6 +32,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Script Global/Script_global.gd"
+Network="*res://Script Global/Script_Network.gd"
 
 [display]
 

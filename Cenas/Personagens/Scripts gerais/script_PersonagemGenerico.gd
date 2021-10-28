@@ -7,6 +7,8 @@ export var Velocidade_de_movimento = 480
 export var Forca_do_pulo = -720
 export var Controle_do_giro = true
 
+slave var slave_position = Vector2()
+
 #---- FUNÇÕES ----#
 func _movimento_do_personagem(delta):
 	#Aplicando gravidade
@@ -32,6 +34,10 @@ func _movimento_do_personagem(delta):
 		Movimento.y = Forca_do_pulo/2
 	Movimento.x = Velocidade_de_movimento * mover_direcoes 
 	move_and_slide(Movimento, Vector2(0,-1))
-	
+
+func init(nickname, start_position, is_slave):
+	$GUI/Nickname.text = nickname
+	global_position = start_position
+
 func _physics_process(delta):
 	_movimento_do_personagem(delta)
