@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Cenas/Personagens/Naruto/script/script_Naruto.gd" type="Script" id=1]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_shuriken.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_after_broke_def.png" type="Texture" id=18]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_death.png" type="Texture" id=19]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_damage.png" type="Texture" id=20]
+[ext_resource path="res://Cenas/Interface_HUD_Mini/Mini_HUD.tscn" type="PackedScene" id=21]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fumaca"
@@ -476,7 +477,7 @@ tracks/3/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=11]
 resource_name = "levantar"
 length = 0.5
 tracks/0/type = "value"
@@ -528,7 +529,7 @@ tracks/3/keys = {
 "values": [ 0.6 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=12]
 resource_name = "morte"
 length = 0.3
 tracks/0/type = "value"
@@ -580,7 +581,7 @@ tracks/3/keys = {
 "values": [ 0.5 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=13]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -632,7 +633,7 @@ tracks/3/keys = {
 "values": [ 0.7 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=14]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -683,7 +684,7 @@ tracks/3/keys = {
 "values": [ 0.7 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=15]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -734,8 +735,7 @@ tracks/3/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=14]
-resource_name = "socao"
+[sub_resource type="Animation" id=16]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -786,8 +786,7 @@ tracks/3/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=15]
-resource_name = "soco"
+[sub_resource type="Animation" id=17]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -838,7 +837,7 @@ tracks/3/keys = {
 "values": [ 1.0 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=18]
 resource_name = "sofrer_dano"
 length = 0.2
 tracks/0/type = "value"
@@ -890,8 +889,7 @@ tracks/3/keys = {
 "values": [ 0.7 ]
 }
 
-[sub_resource type="Animation" id=16]
-resource_name = "vitoria"
+[sub_resource type="Animation" id=19]
 length = 1.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -930,7 +928,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 }
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=20]
 
 [node name="Naruto" type="Node2D"]
 position = Vector2( 176.45, 23.9729 )
@@ -942,8 +940,9 @@ Forca_do_pulo = -1000
 
 [node name="img_naruto" type="Sprite" parent="Personagem_Naruto"]
 position = Vector2( -2, -15.9099 )
-texture = ExtResource( 4 )
-hframes = 6
+texture = ExtResource( 14 )
+hframes = 3
+frame = 2
 
 [node name="fumaca" type="AnimationPlayer" parent="Personagem_Naruto"]
 anims/fumaca = SubResource( 1 )
@@ -990,15 +989,15 @@ anims/caindo = SubResource( 7 )
 anims/clone_voando = SubResource( 8 )
 anims/correndo = SubResource( 9 )
 anims/jutsu_clone = SubResource( 10 )
-anims/levantar = SubResource( 18 )
-anims/morte = SubResource( 19 )
-anims/parado = SubResource( 11 )
-anims/pulando = SubResource( 12 )
-anims/quebra_defesa = SubResource( 13 )
-anims/socao = SubResource( 14 )
-anims/soco = SubResource( 15 )
-anims/sofrer_dano = SubResource( 20 )
-anims/vitoria = SubResource( 16 )
+anims/levantar = SubResource( 11 )
+anims/morte = SubResource( 12 )
+anims/parado = SubResource( 13 )
+anims/pulando = SubResource( 14 )
+anims/quebra_defesa = SubResource( 15 )
+anims/socao = SubResource( 16 )
+anims/soco = SubResource( 17 )
+anims/sofrer_dano = SubResource( 18 )
+anims/vitoria = SubResource( 19 )
 
 [node name="Quebra_defesa" parent="Personagem_Naruto" instance=ExtResource( 12 )]
 modulate = Color( 0.137255, 1, 0.0627451, 1 )
@@ -1017,6 +1016,9 @@ __meta__ = {
 [node name="Colli_dano" type="CollisionShape2D" parent="Personagem_Naruto/Recebe_dano"]
 modulate = Color( 0.600917, 0.598206, 0.945313, 1 )
 scale = Vector2( 0.993695, 0.885423 )
-shape = SubResource( 17 )
+shape = SubResource( 20 )
+
+[node name="Mini_HUD" parent="Personagem_Naruto" instance=ExtResource( 21 )]
+position = Vector2( -38.1832, -35.5184 )
 [connection signal="animation_finished" from="Personagem_Naruto/Anima" to="Personagem_Naruto" method="_on_Anima_animation_finished"]
 [connection signal="area_entered" from="Personagem_Naruto/Recebe_dano" to="Personagem_Naruto" method="_on_Recebe_dano_area_entered"]

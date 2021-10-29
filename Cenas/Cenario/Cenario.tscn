@@ -355,9 +355,6 @@ cell_size = Vector2( 16, 2 )
 format = 1
 tile_data = PoolIntArray( -2031557, 0, 0, -2031548, 0, 0, -1376234, 0, 0, -1376220, 0, 0, -1376172, 0, 0, -1376161, 0, 0, -1376119, 0, 0, -65414, 0, 0, 1245195, 0, 0, 1245231, 0, 0, 1900618, 0, 0, 1900680, 0, 0, 2555927, 0, 0, 3211302, 0, 0, 3211351, 0, 0, 3866735, 0, 0, 4522041, 0, 0 )
 
-[node name="Naruto" parent="." instance=ExtResource( 1 )]
-position = Vector2( 362.9, 206.777 )
-
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Fundo" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -422,3 +419,6 @@ position = Vector2( 2139.35, 62.9961 )
 
 [node name="Naruto2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 421.117, 209.197 )
+
+[node name="Naruto" parent="." instance=ExtResource( 1 )]
+position = Vector2( 362.9, 206.777 )
