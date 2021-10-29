@@ -5,28 +5,35 @@ var ataque = false
 var ataque_clone = preload("res://Cenas/Personagens/Naruto/Ataque_clone.tscn")
 var shuriken = preload("res://Cenas/Ataques_e_habilidades/Shuriken.tscn")
 var qtd_socos = 0
-var socos = false
 var combos = false
+var dano = false
+
 
 
 func _ready():
 	self.Velocidade_de_movimento = 200 
 	run = false
 	ataque = false
-	socos = false
 	combos = false
-	
+	$Quebra_defesa/Socos/Collision_socos.disabled = true
+	$Quebra_defesa/Quebra_def/Collision_quebra_def.disabled = true
 
 func _combos():
 	for i in range(3):
 		
 		pass
 	
-
+#_______________Reviver temporario para testes___________
+func _reviver():
+	
+	if($".".global_position.y > 266):
+		get_tree().change_scene("res://Cenas/Cenario/Cenario.tscn")
+		
+	pass
+#________________________________________________________
 
 func _animacoes_basicas(delta):
-	
-#	print(self.Velocidade_de_movimento)
+
 	if (not ataque):
 	#	-----Controle de correr, andar e parar-----
 		if(Input.is_action_pressed("correr")):
@@ -42,7 +49,7 @@ func _animacoes_basicas(delta):
 				self.Velocidade_de_movimento = 200 
 				$Anima.play("andando")
 				
-		elif not $Anima.current_animation == "pulando" && is_on_floor():
+		elif not $Anima.current_animation == "pulando" && is_on_floor() or $Anima.current_animation == "sofrer_dano" or $Anima.current_animation == "levantar":
 			$Anima.play("parado")
 			
 	#	-----Controle de cair e pular-----
@@ -82,20 +89,23 @@ func _animacoes_basicas(delta):
 #			-----Quebra defesa-----
 		elif Input.is_action_just_pressed("quebra_defesa"):
 			$Anima.play("quebra_defesa")
+			$Quebra_defesa/Quebra_def/Collision_quebra_def.disabled = false
 			ataque = true
 			
 #			-----Inicio dos combos-----
 		elif Input.is_action_just_pressed("combo") and is_on_floor():
 			self.Velocidade_de_movimento = 0
 			$Anima.play("soco")
+			$Quebra_defesa/Socos/Collision_socos.disabled = false
 			ataque = true
 			
 	
-	else:
+	elif(ataque):
 		
 		if Input.is_action_just_pressed("combo") and is_on_floor():
 				self.Velocidade_de_movimento = 0
 				$Anima.play("cabecada")
+				$Quebra_defesa/Socos/Collision_socos.disabled = false
 				combos = true
 				
 #		if(combos):
@@ -104,19 +114,29 @@ func _animacoes_basicas(delta):
 #				self.Velocidade_de_movimento = 0
 #				$Anima.play("socao")
 				
-		else:
-			
-			pass
+	if(dano):
+		
+		pass
 
-#	elif(socos):
-#		if Input.is_action_just_pressed("combo") and is_on_floor():
-#			self.Velocidade_de_movimento = 0
-#			$Anima.play("socao")
-#			pass
+#
+func _damage():
+	$Anima.play("sofrer_dano")
+	self.Velocidade_de_movimento = 0
+	dano = true
+	pass
+	
+func _caindo():
+	$Anima.play("levantar")
+	self.Velocidade_de_movimento = 0
+	dano = true
+	pass
 	
 func _physics_process(delta):
+	
+	_reviver()
 	_animacoes_basicas(delta)
 	_combos()
+	
 	pass
 	
 
@@ -129,10 +149,18 @@ func _on_Anima_animation_finished(anim_name):
 # Controlando a animação de atacar
 	if (anim_name == "jutsu_clone" or anim_name == "fumaca" or anim_name == "quebra_defesa"
 	or anim_name == "soco" or anim_name == "cabecada" or anim_name == "atk_shuriken"):
+		$Quebra_defesa/Quebra_def/Collision_quebra_def.disabled = true
+		$Quebra_defesa/Socos/Collision_socos.disabled = true
 		$fum.visible = false
 		self.Velocidade_de_movimento = 200
 		ataque = false
 		
+	if (anim_name == "sofrer_dano" or anim_name == "levantar"):
+		$Quebra_defesa/Quebra_def/Collision_quebra_def.disabled = true
+		$Quebra_defesa/Socos/Collision_socos.disabled = true
+		$Anima.play("parado")
+		self.Velocidade_de_movimento = 200
+		dano = false
 #	if(anim_name == "socao"):
 #		$fum.visible = false
 #		self.Velocidade_de_movimento = 200
@@ -154,12 +182,14 @@ func _on_Anima_animation_finished(anim_name):
 func _on_Recebe_dano_area_entered(area):
 	
 #	
-	if (area.name == "Shuriken"):
+	if (area.name == "Shuriken" or area.name == "Socos") or area.name == "Clone":
+		_damage()
 		pass
 	if (area.name == "Quebra_def"):
+		_caindo()
 		pass
-	if (area.name == "Clone"):
-		pass
+	
+	
 	pass # Replace with function body.
 
 
