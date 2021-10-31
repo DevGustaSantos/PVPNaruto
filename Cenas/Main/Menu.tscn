@@ -71,7 +71,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 44 ), ExtResource( 49 ), ExtResource( 41 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 43 ), ExtResource( 47 ), ExtResource( 42 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
 "loop": true,
@@ -79,21 +79,21 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 7
 outline_size = 1
 outline_color = Color( 0.945098, 0.388235, 0.0156863, 1 )
 use_filter = true
 font_data = ExtResource( 26 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 6
 outline_size = 1
 outline_color = Color( 0.929412, 0.372549, 0, 1 )
 use_filter = true
 font_data = ExtResource( 26 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 28 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 39 ), ExtResource( 30 ), ExtResource( 33 ), ExtResource( 29 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 40 ), ExtResource( 27 ), ExtResource( 38 ), ExtResource( 31 ), ExtResource( 34 ) ],
 "loop": true,
@@ -141,8 +141,8 @@ autoplay = true
 [node name="MailFlames" type="AnimatedSprite" parent="."]
 position = Vector2( 142.95, 130.08 )
 scale = Vector2( 0.227689, 0.11337 )
-frames = SubResource( 7 )
-frame = 3
+frames = SubResource( 4 )
+frame = 9
 speed_scale = 2.0
 playing = true
 
@@ -156,7 +156,7 @@ margin_top = -58.0
 margin_right = 100.0
 margin_bottom = -46.0
 focus_next = NodePath("../Password")
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/background_color = Color( 0, 0, 0, 1 )
 text = "Example@Example.com"
 syntax_highlighting = true
@@ -169,8 +169,8 @@ __meta__ = {
 [node name="PassFlames" type="AnimatedSprite" parent="."]
 position = Vector2( 148.965, 146.62 )
 scale = Vector2( 0.15886, 0.092425 )
-frames = SubResource( 7 )
-frame = 2
+frames = SubResource( 4 )
+frame = 8
 speed_scale = 2.0
 playing = true
 
@@ -183,7 +183,7 @@ margin_left = -68.5
 margin_top = -44.0
 margin_right = 68.5
 margin_bottom = -32.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/background_color = Color( 0, 0, 0, 1 )
 text = "Password"
 syntax_highlighting = true
@@ -202,7 +202,7 @@ margin_left = -26.0
 margin_top = -16.0
 margin_right = 26.0
 margin_bottom = -2.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Register Now"
 flat = true
 __meta__ = {
@@ -213,7 +213,7 @@ __meta__ = {
 position = Vector2( -2.62207, 2.40186 )
 rotation = 0.127793
 scale = Vector2( 0.0454143, 0.053153 )
-frames = SubResource( 6 )
+frames = SubResource( 7 )
 
 [node name="Join" type="Button" parent="."]
 anchor_left = 0.5
@@ -225,7 +225,7 @@ margin_top = -31.0
 margin_right = 26.0
 margin_bottom = -17.0
 focus_previous = NodePath("../Password")
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 text = "Join!"
 flat = true
 __meta__ = {
