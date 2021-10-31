@@ -30,7 +30,7 @@ func _movimento_do_personagem(delta):
 	#Realizar Pulo
 	if(is_on_floor() && Input.is_action_just_pressed("ui_up")):
 		Movimento.y = Forca_do_pulo/2
-	Movimento.x = Velocidade_de_movimento * mover_direcoes
+	Movimento.x = Velocidade_de_movimento * mover_direcoes 
 	move_and_slide(Movimento, Vector2(0,-1))
 	
 func _physics_process(delta):

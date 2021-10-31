@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/naruto_walk.png-8e71f31d20c11f303fa68c3f565d2e41.stex"
+path="res://.import/naruto_run.png-5499dbcad45792cc72911bbfb56ffa4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_walk.png"
-dest_files=[ "res://.import/naruto_walk.png-8e71f31d20c11f303fa68c3f565d2e41.stex" ]
+source_file="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_run.png"
+dest_files=[ "res://.import/naruto_run.png-5499dbcad45792cc72911bbfb56ffa4d.stex" ]
 
 [params]
 
