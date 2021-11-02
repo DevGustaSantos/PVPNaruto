@@ -189,7 +189,7 @@ func _on_Recebe_dano_area_entered(area):
 		_caindo()
 		pass
 	
-	
-	pass # Replace with function body.
+func set_player_name(new_name):
+	get_node("label").set_text(new_name)
 
 

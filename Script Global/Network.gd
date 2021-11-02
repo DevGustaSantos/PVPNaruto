@@ -63,12 +63,12 @@ remote func pre_start_game(spawn_points):
 
 	get_tree().get_root().get_node("Lobby").hide()
 
-	var player_scene = load("res://Personagem/Naruto/Naruto_personagem.tscn")
+	var player_scene = load("res://Cenas/Personagens/Naruto/Naruto_personagem.tscn")
 
 	for p_id in spawn_points:
 		var spawn_pos = world.get_node("SpawnPoints/" + str(spawn_points[p_id])).position
+		
 		var player = player_scene.instance()
-
 		player.set_name(str(p_id)) # Use unique ID as node name.
 		player.position=spawn_pos
 		player.set_network_master(p_id) #set unique id as master.
@@ -76,6 +76,7 @@ remote func pre_start_game(spawn_points):
 		if p_id == get_tree().get_network_unique_id():
 			# If node for this peer id, set name.
 			player.set_player_name(player_name)
+			pass
 		else:
 			# Otherwise set name from peer.
 			player.set_player_name(players[p_id])
