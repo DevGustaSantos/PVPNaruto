@@ -392,28 +392,30 @@ position = Vector2( 0, -76 )
 texture = ExtResource( 10 )
 centered = false
 
-[node name="Spawn_Points" type="Node" parent="."]
+[node name="Players" type="Node2D" parent="."]
 
-[node name="Player1" type="Position2D" parent="Spawn_Points"]
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="0" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 45.3572, 214.187 )
 
-[node name="Player2" type="Position2D" parent="Spawn_Points"]
+[node name="1" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 47.8771, -50.3969 )
 
-[node name="Player3" type="Position2D" parent="Spawn_Points"]
+[node name="2" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 622.401, 206.627 )
 
-[node name="Player4" type="Position2D" parent="Spawn_Points"]
+[node name="3" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 483.81, -27.7183 )
 
-[node name="Player5" type="Position2D" parent="Spawn_Points"]
+[node name="4" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 904.623, 151.191 )
 
-[node name="Player6" type="Position2D" parent="Spawn_Points"]
+[node name="5" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 1627.82, 214.187 )
 
-[node name="Player7" type="Position2D" parent="Spawn_Points"]
+[node name="6" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 1436.31, -47.877 )
 
-[node name="Player8" type="Position2D" parent="Spawn_Points"]
+[node name="7" type="Position2D" parent="SpawnPoints"]
 position = Vector2( 2139.35, 62.9961 )
