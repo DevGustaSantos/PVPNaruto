@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/naruto_walk.png-43e4a1e210bdadbd9b4c07974799f433.stex"
+path="res://.import/naruto_juts_clone0.png-588107633d185a92579633fa6e97d35c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Cenas/Personagens/IMG_Naruto/naruto_walk.png"
-dest_files=[ "res://.import/naruto_walk.png-43e4a1e210bdadbd9b4c07974799f433.stex" ]
+source_file="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone0.png"
+dest_files=[ "res://.import/naruto_juts_clone0.png-588107633d185a92579633fa6e97d35c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
