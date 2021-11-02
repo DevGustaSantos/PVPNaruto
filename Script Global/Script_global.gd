@@ -6,6 +6,9 @@ var Gravidade = 1200
 var Vida_player = 100
 var Chakra_player = 40
 
+var personagem = 2
+
+
 func _process(delta):
 	if(Vida_player > 100):
 		Vida_player = 100

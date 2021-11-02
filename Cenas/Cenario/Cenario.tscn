@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Cenas/Personagens/Naruto/Naruto_personagem.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Cenas/Personagens/Personagens.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Cenas/Cenario/Imagens_cenario/plataforma_4.png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Cenario/Imagens_cenario/plataforma_1.png" type="Texture" id=3]
 [ext_resource path="res://Cenas/Cenario/Imagens_cenario/plataforma_6.png" type="Texture" id=4]
@@ -417,8 +417,5 @@ position = Vector2( 1436.31, -47.877 )
 [node name="Player8" type="Position2D" parent="."]
 position = Vector2( 2139.35, 62.9961 )
 
-[node name="Naruto2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 421.117, 209.197 )
-
 [node name="Naruto" parent="." instance=ExtResource( 1 )]
-position = Vector2( 362.9, 206.777 )
+position = Vector2( 359.125, 220.935 )
