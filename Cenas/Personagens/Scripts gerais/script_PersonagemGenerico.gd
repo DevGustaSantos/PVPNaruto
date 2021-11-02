@@ -40,9 +40,6 @@ func _movimento_do_personagem(delta):
 	Movimento.x = Velocidade_de_movimento * mover_direcoes 
 	move_and_slide(Movimento, Vector2(0,-1))
 
-func init(nickname, start_position, is_slave):
-	$GUI/Nickname.text = nickname
-	global_position = start_position
 
 func _physics_process(delta):
 	_movimento_do_personagem(delta)
