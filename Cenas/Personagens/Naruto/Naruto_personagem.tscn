@@ -1016,5 +1016,14 @@ modulate = Color( 0.600917, 0.598206, 0.945313, 1 )
 scale = Vector2( 0.993695, 0.885423 )
 shape = SubResource( 20 )
 
+[node name="label" type="Label" parent="Personagem_Naruto"]
+margin_left = -20.3293
+margin_top = 22.981
+margin_right = 19.6707
+margin_bottom = 36.981
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="animation_finished" from="Personagem_Naruto/Anima" to="Personagem_Naruto" method="_on_Anima_animation_finished"]
 [connection signal="area_entered" from="Personagem_Naruto/Recebe_dano" to="Personagem_Naruto" method="_on_Recebe_dano_area_entered"]
