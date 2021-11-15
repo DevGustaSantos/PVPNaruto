@@ -40,4 +40,23 @@ func _on_CreditsButton_pressed():
 
 
 func _on_Join_pressed():
-	OS.shell_open(JoinLink)
+	var url = "http://narutin.freevar.com/consultar.php?";
+	var data = "email=" + $TextEmail.text + "&password=" + $TextSenha.text;
+	var headers = []
+	var use_ssl = false
+	$HTTPRequest.request(url + data, headers, use_ssl, HTTPClient.METHOD_GET)
+	
+#	OS.shell_open(JoinLink)
+
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	print ("body = " + body.get_string_from_utf8())
+	var resultado = body.get_string_from_utf8()
+	
+	if(resultado != ""):
+		Global.player = resultado
+#		$Timer.start() #ignora
+		get_tree().change_scene("res://Cenas/Cenario/Cenario.tscn")
+	else: #treco de mostrar a senhor invalida
+		print("Senha ou e-mail Invalidos ")
+	pass # Replace with function body.

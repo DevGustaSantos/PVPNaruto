@@ -316,6 +316,7 @@ uniform float Speed = 0.02f;
 void fragment(){
 	COLOR = texture(TEXTURE,UV + (Direction * TIME * Speed));
 }"
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=15]
 shader = SubResource( 14 )
@@ -331,6 +332,7 @@ uniform float Speed = 0.02f;
 void fragment(){
 	COLOR = texture(TEXTURE,UV + (Direction * TIME * Speed));
 }"
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=17]
 shader = SubResource( 16 )

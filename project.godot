@@ -30,6 +30,10 @@ config/name="Projeto Faculdade 2021"
 run/main_scene="res://Cenas/Main/Intro.tscn"
 config/icon="res://GameIcon.png"
 
+[autoload]
+
+Global="*res://Script Global/Script_global.gd"
+
 [display]
 
 window/size/width=320

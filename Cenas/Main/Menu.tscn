@@ -145,7 +145,7 @@ autoplay = true
 position = Vector2( 142.95, 119.08 )
 scale = Vector2( 0.227689, 0.11337 )
 frames = SubResource( 4 )
-frame = 1
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -153,6 +153,7 @@ playing = true
 position = Vector2( 148.965, 143.62 )
 scale = Vector2( 0.15886, 0.092425 )
 frames = SubResource( 4 )
+frame = 4
 speed_scale = 2.0
 playing = true
 
@@ -259,6 +260,8 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="mouse_entered" from="CreditsButton" to="." method="_on_CreditsButton_mouse_entered"]
 [connection signal="mouse_exited" from="CreditsButton" to="." method="_on_CreditsButton_mouse_exited"]
 [connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
@@ -266,3 +269,4 @@ __meta__ = {
 [connection signal="mouse_exited" from="RegisterButton" to="." method="_on_RegisterButton_mouse_exited"]
 [connection signal="pressed" from="RegisterButton" to="." method="_on_RegisterButton_pressed"]
 [connection signal="pressed" from="Join" to="." method="_on_Join_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

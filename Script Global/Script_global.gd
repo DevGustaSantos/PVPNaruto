@@ -5,3 +5,7 @@ class_name RegrasDoMundo
 var Gravidade = 1200
 #---- Fim Variaveis do jogo ----#
 var player2_id = -1
+
+
+#----Lobby ----#
+var player = ""
