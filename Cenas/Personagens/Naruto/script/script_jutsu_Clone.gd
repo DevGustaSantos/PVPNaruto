@@ -27,8 +27,6 @@ func _on_Clone_body_entered(body):
 			$Anima.play("ataque_clone_sakura")
 		$Timer.queue_free()
 		$Clone_corpo.queue_free()
-		
-		$Soco.queue_free()
 		$Area_range.queue_free()
 	pass
 
@@ -56,7 +54,6 @@ func _on_Timer_timeout():
 	if(Global.personagem == 3):
 		$Anima.play("ataque_clone_sakura")
 	$Clone_corpo.queue_free()
-	$Soco.queue_free()
 	$Area_range.queue_free()
 	pass 
 

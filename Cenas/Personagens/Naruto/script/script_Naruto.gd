@@ -14,7 +14,6 @@ func _ready():
 #	____--- EM RELAÇÃO A QUAL PERSONAGEM FOI ESCOLHIDO ---____
 	if (Global.personagem != 1):
 		$".".queue_free()
-		
 	self.Velocidade_de_movimento = 200 
 	run = false
 	ataque = false

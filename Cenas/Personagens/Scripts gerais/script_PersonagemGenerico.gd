@@ -4,7 +4,7 @@ class_name PersonagemGenerico
 #---- VARIAVEIS ----#
 var Movimento = Vector2(0,-1)
 export var Velocidade_de_movimento = 480
-export var Forca_do_pulo = -720
+export var Forca_do_pulo = -1000
 export var Controle_do_giro = true
 
 puppet var puppet_pos = Vector2()

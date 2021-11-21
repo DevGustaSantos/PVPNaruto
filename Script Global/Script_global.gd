@@ -3,15 +3,18 @@ class_name RegrasDoMundo
 
 #---- Variaveis ----#
 var Gravidade = 1200
-var Vida_player = 100
+var Vida_player = 70
 var Chakra_player = 40
 
-var personagem = 2
+var personagem = 3
 
 
 func _process(delta):
 	if(Vida_player > 100):
 		Vida_player = 100
+	if(Vida_player < 0):
+		Vida_player = 0
 	if(Chakra_player > 40):
 		Chakra_player = 40
+	
 	

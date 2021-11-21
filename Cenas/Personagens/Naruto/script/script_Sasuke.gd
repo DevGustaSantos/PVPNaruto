@@ -6,6 +6,18 @@ var shuriken = preload("res://Cenas/Ataques_e_habilidades/Shuriken.tscn")
 var ataque_clone = preload("res://Cenas/Personagens/Naruto/Ataque_clone.tscn")
 var jutsu_Bfogo = preload("res://Cenas/Ataques_e_habilidades/Bola_de_fogo.tscn")
 var dano = false
+var cair = false
+var morte = false
+var combo = false
+var combo2 = false
+
+
+#teste mover personagem
+var veldaMorte = 100
+var mortepersonagem = Vector2(veldaMorte,0) 
+
+
+
 
 #Jutsu
 sync func bola_de_fogo():
@@ -23,10 +35,14 @@ func _ready():
 #	____--- EM RELAÇÃO A QUAL PERSONAGEM FOI ESCOLHIDO ---____
 	if (Global.personagem != 2):
 		$".".queue_free()
-		
 	self.Velocidade_de_movimento = 200 
+	self.Forca_do_pulo = -1000
 	run = false
 	ataque = false
+	dano = false
+	cair = false
+	morte = false
+	combo = false
 	pass 
 
 
@@ -48,12 +64,21 @@ func _damage():
 func _caindo():
 	$Anima.play("levantar")
 	self.Velocidade_de_movimento = 0
-	dano = true
+	cair = true
 	pass
 
 func _animacoes_basicas(delta):
-
+#	Animações de morte e dano
+#	if( $Anima.current_animation == "levantar" || $Anima.current_animation == "morte" ):
+#		if(self.Controle_do_giro == false):
+#			veldaMorte = -100
+#			translate(mortepersonagem * delta)
+		 
+		
+		
 	print(self.Movimento.y)
+	print(self.Velocidade_de_movimento)
+	
 	
 	if (not ataque):
 	#	-----Controle de correr, andar e parar-----
@@ -66,15 +91,16 @@ func _animacoes_basicas(delta):
 			
 		if is_on_floor() && self.Movimento.x:
 			if(run):
-				self.Velocidade_de_movimento = 300 
+#				self.Velocidade_de_movimento = 300 
 				$Anima.play("correndo")
 			else:
-				self.Velocidade_de_movimento = 200 
+#				self.Velocidade_de_movimento = 200 
 				$Anima.play("andando")
 				
 		elif(Input.is_action_pressed("defesa")):
 			$Anima.play("defender")
 			self.Velocidade_de_movimento = 0
+			
 		elif(Input.is_action_just_released("defesa")):
 			self.Velocidade_de_movimento = 200
 			
@@ -96,13 +122,12 @@ func _animacoes_basicas(delta):
 			$Anima.play("caindo")
 			
 #			-----Jutsu clone-----
-		if Input.is_action_just_pressed("jutsu_clone"): # J
-			$fum.visible = true
+		if Input.is_action_just_pressed("jutsu_clone") && Global.Chakra_player >= 5: # J
 			$Anima.play("jutsu_clone")
 			$fumaca.play("fumaca")
 			self.Velocidade_de_movimento = 0
 			ataque = true
-			
+			Global.Chakra_player -=5
 			var clone = ataque_clone.instance()
 			clone.global_position = $Shuriken_eClone.global_position
 			clone.z_index = -1
@@ -112,18 +137,19 @@ func _animacoes_basicas(delta):
 			
 			
 #			----- Jutsu bola de fogo -----
-		elif Input.is_action_just_pressed("jutsu_bola_fogo"): # L
+		elif Input.is_action_just_pressed("jutsu_bola_fogo") && Global.Chakra_player >= 15: # L
 			$Anima.play("jutsu_bola_fogo")
 			self.Velocidade_de_movimento = 0
 			self.Forca_do_pulo = 0
 			ataque = true
+			Global.Chakra_player -=15
 			
 #			------ Shuriken -----
-		elif Input.is_action_just_pressed("shuriken"): # H
+		elif Input.is_action_just_pressed("shuriken") && Global.Chakra_player >= 1: # H
 			$Anima.play("atk_shuriken")
 			self.Velocidade_de_movimento = 0
 			ataque = true
-			
+			Global.Chakra_player -= 0.5
 			var atk_shuriken = shuriken.instance()
 			atk_shuriken.global_position = $Shuriken_eClone.global_position
 			atk_shuriken.z_index = -1
@@ -132,7 +158,7 @@ func _animacoes_basicas(delta):
 			get_tree().root.add_child(atk_shuriken)
 			
 #			-----Quebra defesa-----
-		elif Input.is_action_just_pressed("quebra_defesa"):
+		elif Input.is_action_just_pressed("quebra_defesa") and is_on_floor():
 			$Anima.play("quebra_defesa")
 			self.Velocidade_de_movimento = 0
 			ataque = true
@@ -142,21 +168,27 @@ func _animacoes_basicas(delta):
 			self.Velocidade_de_movimento = 0
 			$Anima.play("soco")
 			ataque = true
+			combo = true
 			
 	
 	elif(ataque):
 		
 #		TESTE VITORIA
-#		if Input.is_action_just_pressed("VITORIA"):
-#			$Anima.play("vitoria")
+		if Input.is_action_just_pressed("VITORIA"):
+			$Anima.play("vitoria")
 		
-		
-		if Input.is_action_just_pressed("combo") and is_on_floor():
+		if(combo):
+			if Input.is_action_just_pressed("combo") and is_on_floor():
 				self.Velocidade_de_movimento = 0
 				$Anima.play("pesada")
-
+			
 	if(dano):
 		
+		pass
+	if(cair):
+		
+		pass
+	if(morte):
 		pass
 
 
@@ -177,35 +209,48 @@ func _on_Anima_animation_finished(anim_name):
 	or anim_name == "soco" or anim_name == "pesada" or anim_name == "atk_shuriken" or anim_name == "jutsu_bola_fogo_CFogo"
 	or anim_name == "atk_alto_baixo"):
 		self.Forca_do_pulo = -1000
-		$fum.visible = false
 		self.Velocidade_de_movimento = 200
+		cair = false
+		dano = false
 		ataque = false
 		
 	if (anim_name == "sofrer_dano" or anim_name == "levantar"):
 		$Anima.play("parado")
 		self.Velocidade_de_movimento = 200
+		ataque = false
 		dano = false
+	
+	if(anim_name == "morte"):
+		veldaMorte = 0
 		
 	if(anim_name == "jutsu_bola_fogo"):
 		$Anima.play("jutsu_bola_fogo_CFogo")
 		bola_de_fogo()
-		
-		
+
 		pass
 
 # ADICIONAR CADA ATAQUE (NOME) DOS OUTROS PERSONAGENS
 func _on_Recebe_dano_area_entered(area):
-	if (area.name == "Shuriken" or area.name == "Socos_chutes") or area.name == "Clone":
+	
+	if (area.name == "Shuriken"):
+		Global.Vida_player -= 2
+		_damage()
+	if(area.name == "Socos_chutes"):
+		Global.Vida_player -= 3
+		_damage()
+	if(area.name == "Clone"):
+		Global.Vida_player -= 5
+		_damage()
+	if(area.name == "Bola_fogo"):
+		Global.Vida_player -= 10
 		_damage()
 		pass
 		
-	if (area.name == "Quebra_defesa"):
-		_caindo()
-		pass
 
 
 func _on_Quebra_defesa_body_entered(body):
 	if (body):
+		Global.Vida_player -= 3
 		_caindo()
 	
 	
