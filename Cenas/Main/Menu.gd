@@ -1,7 +1,7 @@
 extends Control
-var Registerlink = "www.facebook.com"
-var CreditsLink = "http://www.republiquedesmangues.fr"
-var JoinLink = "http://www.omfgdogs.com"
+var Registerlink = "http://narutin.freevar.com/Homologacao/index.html"
+var CreditsLink = "http://narutin.freevar.com/Homologacao/code-patronum.html#equipe"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$BackGroundMain.playing = true
