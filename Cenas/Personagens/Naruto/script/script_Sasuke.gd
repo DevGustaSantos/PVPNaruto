@@ -5,6 +5,7 @@ var ataque = false
 var shuriken = preload("res://Cenas/Ataques_e_habilidades/Shuriken.tscn")
 var ataque_clone = preload("res://Cenas/Personagens/Naruto/Ataque_clone.tscn")
 var jutsu_Bfogo = preload("res://Cenas/Ataques_e_habilidades/Bola_de_fogo.tscn")
+var jutsu_shuriken = preload("res://Cenas/Ataques_e_habilidades/Jutsu_shuriken.tscn")
 var dano = false
 var cair = false
 var morte = false
@@ -13,7 +14,7 @@ var combo2 = false
 
 
 #teste mover personagem
-var veldaMorte = 100
+export var veldaMorte = 100
 var mortepersonagem = Vector2(veldaMorte,0) 
 
 
@@ -69,15 +70,16 @@ func _caindo():
 
 func _animacoes_basicas(delta):
 #	Animações de morte e dano
-#	if( $Anima.current_animation == "levantar" || $Anima.current_animation == "morte" ):
-#		if(self.Controle_do_giro == false):
-#			veldaMorte = -100
-#			translate(mortepersonagem * delta)
+	if( $Anima.current_animation == "levantar" || $Anima.current_animation == "morte" ):
+		if(self.Controle_do_giro == false):
+			translate(mortepersonagem * delta * -1)
+		else:
+			translate(mortepersonagem * delta )
 		 
 		
 		
-	print(self.Movimento.y)
-	print(self.Velocidade_de_movimento)
+#	print(self.Movimento.y)
+#	print(self.Velocidade_de_movimento)
 	
 	
 	if (not ataque):
@@ -122,12 +124,12 @@ func _animacoes_basicas(delta):
 			$Anima.play("caindo")
 			
 #			-----Jutsu clone-----
-		if Input.is_action_just_pressed("jutsu_clone") && Global.Chakra_player >= 5: # J
+		if Input.is_action_just_pressed("jutsu_1") && Global.Chakra_player >= 10: # J
 			$Anima.play("jutsu_clone")
 			$fumaca.play("fumaca")
 			self.Velocidade_de_movimento = 0
 			ataque = true
-			Global.Chakra_player -=5
+			Global.Chakra_player -=9
 			var clone = ataque_clone.instance()
 			clone.global_position = $Shuriken_eClone.global_position
 			clone.z_index = -1
@@ -135,14 +137,35 @@ func _animacoes_basicas(delta):
 				clone.scale.x = -1
 			get_tree().root.add_child(clone)
 			
+#			-----Jutsu Shuriken----- fazer o jutsu na cena
+#		elif Input.is_action_just_pressed("jutsu_2") && Global.Chakra_player >= 20: # H
+#			$Anima.play("atk_shuriken")
+#			self.Velocidade_de_movimento = 0
+#			ataque = true
+#			Global.Chakra_player -= 9
+#			var atk_jutsu_shuriken = jutsu_shuriken.instance()
+#			atk_jutsu_shuriken.global_position = $Shuriken_eClone.global_position
+#			atk_jutsu_shuriken.z_index = -1
+#			if(self.Controle_do_giro == false):
+#				atk_jutsu_shuriken.scale.x = -1
+#			get_tree().root.add_child(atk_jutsu_shuriken)
+
 			
 #			----- Jutsu bola de fogo -----
-		elif Input.is_action_just_pressed("jutsu_bola_fogo") && Global.Chakra_player >= 15: # L
+		elif Input.is_action_just_pressed("jutsu_3") && Global.Chakra_player >= 30: # L
 			$Anima.play("jutsu_bola_fogo")
 			self.Velocidade_de_movimento = 0
 			self.Forca_do_pulo = 0
 			ataque = true
-			Global.Chakra_player -=15
+			Global.Chakra_player -=9
+		
+#			----- Jutsu Chidori ----- Incompleto
+#		elif Input.is_action_just_pressed("jutsu_4") && Global.Chakra_player >= 40: # L
+#			$Anima.play("")
+#			self.Velocidade_de_movimento = 0
+#			self.Forca_do_pulo = 0
+#			ataque = true
+#			Global.Chakra_player -=9
 			
 #			------ Shuriken -----
 		elif Input.is_action_just_pressed("shuriken") && Global.Chakra_player >= 1: # H
@@ -217,6 +240,7 @@ func _on_Anima_animation_finished(anim_name):
 	if (anim_name == "sofrer_dano" or anim_name == "levantar"):
 		$Anima.play("parado")
 		self.Velocidade_de_movimento = 200
+		cair = false
 		ataque = false
 		dano = false
 	

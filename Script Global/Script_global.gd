@@ -6,7 +6,7 @@ var Gravidade = 1200
 var Vida_player = 70
 var Chakra_player = 40
 
-var personagem = 3
+var personagem = 1
 
 
 func _process(delta):

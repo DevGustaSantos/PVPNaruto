@@ -1,18 +1,17 @@
-[gd_scene load_steps=129 format=2]
+[gd_scene load_steps=128 format=2]
 
 [ext_resource path="res://Cenas/Interface_HUD_Mini/Mini_HUD.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Cenas/Ataques_e_habilidades/Area_quebra_def.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_guard.png" type="Texture" id=2]
 [ext_resource path="res://Cenas/Personagens/Naruto/script/script_Naruto.gd" type="Script" id=3]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_broke_def1.png" type="Texture" id=4]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_socos1.png" type="Texture" id=5]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_socos2.png" type="Texture" id=6]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_win.png" type="Texture" id=7]
-[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone2.png" type="Texture" id=8]
+[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_atk_down.png" type="Texture" id=8]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_fall.png" type="Texture" id=9]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_socos3.png" type="Texture" id=10]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_after_broke_def.png" type="Texture" id=11]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_death.png" type="Texture" id=12]
-[ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_juts_clone3.png" type="Texture" id=13]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_damage.png" type="Texture" id=14]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_shuriken.png" type="Texture" id=15]
 [ext_resource path="res://Cenas/Personagens/Naruto/IMG_Naruto/naruto_walk.png" type="Texture" id=16]
@@ -101,6 +100,42 @@ tracks/2/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("fum:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 27.6757, -14.3244 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("fum:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("fumaca:playback_speed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 21.8849 )
@@ -156,8 +191,141 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:Velocidade_de_movimento")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 200 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath(".:Forca_do_pulo")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -1000 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:veldaMorte")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=4]
+resource_name = "atk_alto_baixo"
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_naruto:texture")
@@ -169,7 +337,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("img_naruto:hframes")
@@ -196,7 +364,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Anima:playback_speed")
+tracks/3/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -205,7 +373,91 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.7 ]
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -6.34745, -17.5302 ), Vector2( 20.1568, -5.83713 ), Vector2( 8.5751, 24.008 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -257,6 +509,114 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Shuriken_eClone:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 27.8213, -14.154 ), Vector2( 22.8213, 4.59598 ), Vector2( 30.3213, 0.0959811 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -310,6 +670,90 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 4.75343, -15.0278 ), Vector2( -4.92781, -11.8008 ), Vector2( 19.4857, -5.06599 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=7]
 length = 0.2
@@ -362,59 +806,104 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.7 ]
 }
-
-[sub_resource type="Animation" id=8]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("img_naruto:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ true ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("img_naruto:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("img_naruto:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Anima:playback_speed")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/5/type = "value"
+tracks/5/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.7 ]
+"values": [ Vector2( 19.4857, -5.06599 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -464,6 +953,298 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.7 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.4857, -5.06599 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:Velocidade_de_movimento")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 300 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath(".:Forca_do_pulo")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -1000 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:veldaMorte")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "defender"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.4857, -5.06599 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:Velocidade_de_movimento")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:Forca_do_pulo")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("img_naruto:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("img_naruto:hframes")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("img_naruto:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -515,6 +1296,102 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Shuriken_eClone:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 24.4821, 8.92997 ), Vector2( 31.4821, 0.429974 ), Vector2( 32.9821, -5.82003 ), Vector2( 33.7321, -11.57 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -568,6 +1445,150 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.6 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:Velocidade_de_movimento")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath(".:Forca_do_pulo")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:collision_mask")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 12, 13 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath(".:veldaMorte")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 resource_name = "morte"
@@ -619,6 +1640,150 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:veldaMorte")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:Velocidade_de_movimento")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath(".:Forca_do_pulo")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:collision_mask")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.4857, -5.06599 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -672,6 +1837,186 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.7 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:collision_mask")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:Velocidade_de_movimento")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 200 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath(".:Forca_do_pulo")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -1000 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath(".:veldaMorte")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("fum:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("fum:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 27.6757, -14.3244 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("caixa_colisao:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -1, -3 ) ]
+}
 
 [sub_resource type="Animation" id=14]
 length = 0.2
@@ -722,6 +2067,102 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.7 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -774,6 +2215,102 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.24327, 3.07186 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=16]
 length = 0.4
@@ -825,6 +2362,102 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -23.729, -2.96137 ), Vector2( 20.7485, 0.967245 ), Vector2( 13.8734, 6.86017 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=17]
 length = 0.3
@@ -875,6 +2508,102 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 1.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Recebe_dano/Colli_dano:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -0.462963 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -8.29519, -9.97676 ), Vector2( 14.0137, -7.31091 ), Vector2( 21.3098, -5.62722 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -928,6 +2657,90 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.7 ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 21.3098, -5.62722 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 20.433, -13.0679 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.29953, -28.6699 ) ]
+}
 
 [sub_resource type="Animation" id=19]
 length = 1.1
@@ -971,8 +2784,16 @@ tracks/2/keys = {
 [sub_resource type="RectangleShape2D" id=20]
 extents = Vector2( 10, 10.5178 )
 
-[sub_resource type="Animation" id=21]
-resource_name = "fumaca"
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 3.25806, 4.63966 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 3.58234, 3.34565 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 6.0665, 2.43397 )
+
+[sub_resource type="Animation" id=24]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("fum:texture")
@@ -1023,10 +2844,10 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=25]
 extents = Vector2( 10, 21.8849 )
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=26]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1186,8 +3007,7 @@ tracks/12/keys = {
 "values": [ -1000 ]
 }
 
-[sub_resource type="Animation" id=24]
-resource_name = "atk_alto_baixo"
+[sub_resource type="Animation" id=27]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -1310,7 +3130,7 @@ tracks/9/keys = {
 "values": [ Vector2( 20.433, -13.0679 ) ]
 }
 
-[sub_resource type="Animation" id=25]
+[sub_resource type="Animation" id=28]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -1445,7 +3265,7 @@ tracks/10/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=29]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -1569,7 +3389,7 @@ tracks/9/keys = {
 "values": [ Vector2( 20.433, -13.0679 ) ]
 }
 
-[sub_resource type="Animation" id=27]
+[sub_resource type="Animation" id=30]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -1729,8 +3549,7 @@ tracks/12/keys = {
 "values": [ -1000 ]
 }
 
-[sub_resource type="Animation" id=28]
-resource_name = "defender"
+[sub_resource type="Animation" id=31]
 length = 0.1
 loop = true
 tracks/0/type = "value"
@@ -1866,8 +3685,7 @@ tracks/10/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=29]
-resource_name = "jutsu_bola_fogo"
+[sub_resource type="Animation" id=32]
 length = 1.9
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2002,8 +3820,7 @@ tracks/10/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=30]
-resource_name = "jutsu_bola_fogo_CFogo"
+[sub_resource type="Animation" id=33]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2138,7 +3955,7 @@ tracks/10/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=34]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2285,7 +4102,7 @@ tracks/11/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=35]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2357,7 +4174,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true, true ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
@@ -2431,8 +4248,32 @@ tracks/11/keys = {
 "update": 1,
 "values": [ 0, 200 ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath(".:collision_mask")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:veldaMorte")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=36]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2590,8 +4431,32 @@ tracks/12/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:collision_mask")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath(".:veldaMorte")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=37]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -2738,8 +4603,44 @@ tracks/11/keys = {
 "update": 1,
 "values": [ 200 ]
 }
+tracks/12/type = "value"
+tracks/12/path = NodePath(".:Forca_do_pulo")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ -1000 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath(".:veldaMorte")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath(".:collision_mask")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=38]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2862,7 +4763,7 @@ tracks/9/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=39]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -2985,7 +4886,7 @@ tracks/9/keys = {
 "values": [ Vector2( 7.53112, 18.5454 ) ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=40]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -3042,10 +4943,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false, true ]
+"values": [ true, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
@@ -3066,10 +4967,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true, false, true ]
+"values": [ true, false ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
@@ -3108,7 +5009,7 @@ tracks/9/keys = {
 "values": [ Vector2( -3.29953, -26.6699 ), Vector2( -3.29953, -26.6699 ) ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=41]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -3231,7 +5132,7 @@ tracks/9/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=42]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -3354,7 +5255,7 @@ tracks/9/keys = {
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=43]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -3476,8 +5377,32 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Vector2( 13.3704, 2.6209 ) ]
 }
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Personagem_Naruto/Socos_chutes/Colli_socos_chutes:disabled")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Personagem_Naruto/Socos_chutes/Colli_socos_chutes:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 21.3098, -5.62722 ) ]
+}
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=44]
 length = 1.7
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sasuke:texture")
@@ -3599,15 +5524,6 @@ tracks/9/keys = {
 "update": 0,
 "values": [ Vector2( -3.29953, -25.6699 ) ]
 }
-
-[sub_resource type="RectangleShape2D" id=42]
-extents = Vector2( 3.25806, 4.63966 )
-
-[sub_resource type="RectangleShape2D" id=43]
-extents = Vector2( 3.58234, 3.34565 )
-
-[sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 6.0665, 2.43397 )
 
 [sub_resource type="Animation" id=45]
 resource_name = "explosao"
@@ -3923,7 +5839,7 @@ tracks/12/keys = {
 "values": [ Vector2( -37.4332, -41.2684 ) ]
 }
 
-[sub_resource type="Animation" id=67]
+[sub_resource type="Animation" id=49]
 resource_name = "atk_alto_baixo"
 length = 0.5
 tracks/0/type = "value"
@@ -3999,7 +5915,7 @@ tracks/5/keys = {
 "values": [ Vector2( 3.07185, -25.325 ), Vector2( 17.6639, 17.0479 ), Vector2( 14.5771, 24.0633 ), Vector2( 4.61523, 25.0455 ) ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=50]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4110,7 +6026,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=51]
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -4210,7 +6126,7 @@ tracks/7/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=52]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -4334,7 +6250,7 @@ tracks/9/keys = {
 "values": [ -1000 ]
 }
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=53]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4457,8 +6373,7 @@ tracks/9/keys = {
 "values": [ Vector2( 29.431, -7.56787 ) ]
 }
 
-[sub_resource type="Animation" id=53]
-resource_name = "jutsu_cura"
+[sub_resource type="Animation" id=54]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4545,8 +6460,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=54]
-resource_name = "jutsu_socao_chao"
+[sub_resource type="Animation" id=55]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4705,8 +6619,7 @@ tracks/12/keys = {
 "values": [ false, true, true ]
 }
 
-[sub_resource type="Animation" id=55]
-resource_name = "jutsu_socos"
+[sub_resource type="Animation" id=56]
 length = 1.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4817,7 +6730,7 @@ tracks/8/keys = {
 "values": [ Vector2( -37.4332, -41.2684 ), Vector2( -37.433, -67.412 ) ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=57]
 length = 0.6
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -4874,10 +6787,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true, false ]
+"values": [ true ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath(".:Velocidade_de_movimento")
@@ -4886,10 +6799,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0, 200 ]
+"values": [ 0 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath(".:Forca_do_pulo")
@@ -4898,13 +6811,37 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath(".:veldaMorte")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, -1000 ]
+"values": [ 100, 0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath(".:collision_mask")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 12 ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=58]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5038,8 +6975,20 @@ tracks/10/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:veldaMorte")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=59]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -5150,8 +7099,44 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( -37.4332, -41.2684 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("caixa_colisao:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.44545, 2.10458 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath(".:veldaMorte")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 100 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath(".:collision_mask")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 13 ]
+}
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=60]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5238,7 +7223,7 @@ tracks/6/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=61]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5337,7 +7322,7 @@ tracks/7/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=61]
+[sub_resource type="Animation" id=62]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5394,10 +7379,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, false, true ]
+"values": [ true, false, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Quebra_defesa/Colli_quebra_def:position")
@@ -5418,10 +7403,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, false, true ]
+"values": [ true, false, false ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def2:position")
@@ -5460,7 +7445,7 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=62]
+[sub_resource type="Animation" id=63]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5571,7 +7556,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=63]
+[sub_resource type="Animation" id=64]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5628,10 +7613,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ true, false, false, true ]
+"values": [ true, false, false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Socos_chutes/Colli_socos_chutes:position")
@@ -5652,10 +7637,10 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, true ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
@@ -5664,10 +7649,10 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0.3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ true, true ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Recebe_dano/Colli_dano:disabled")
@@ -5682,7 +7667,7 @@ tracks/8/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=64]
+[sub_resource type="Animation" id=65]
 length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5733,16 +7718,16 @@ tracks/3/keys = {
 "values": [ 0.7 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
+tracks/4/path = NodePath("Recebe_dano/Colli_dano:disabled")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Socos_chutes/Colli_socos_chutes:disabled")
@@ -5751,25 +7736,25 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
+tracks/6/path = NodePath("Quebra_defesa/Colli_quebra_def:disabled")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Recebe_dano/Colli_dano:disabled")
+tracks/7/path = NodePath("Quebra_defesa/Colli_quebra_def2:disabled")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -5778,10 +7763,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 
-[sub_resource type="Animation" id=65]
+[sub_resource type="Animation" id=66]
 length = 1.4
 tracks/0/type = "value"
 tracks/0/path = NodePath("img_sakura:texture")
@@ -5844,15 +7829,15 @@ tracks/4/keys = {
 "values": [ Vector2( -37.4332, -41.2684 ), Vector2( -37.433, -57.962 ), Vector2( -37.433, -63.317 ), Vector2( -37.433, -68.672 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=66]
+[sub_resource type="RectangleShape2D" id=67]
 extents = Vector2( 20.8122, 12.3929 )
 
 [node name="Personagens" type="Node2D"]
 
 [node name="Personagem_Naruto" type="KinematicBody2D" parent="."]
-visible = false
 collision_mask = 13
 script = ExtResource( 3 )
+Velocidade_de_movimento = 200
 
 [node name="Camera" type="Camera2D" parent="Personagem_Naruto"]
 current = true
@@ -5874,36 +7859,37 @@ editor_draw_drag_margin = true
 
 [node name="img_naruto" type="Sprite" parent="Personagem_Naruto"]
 position = Vector2( -2, -15.9099 )
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 hframes = 6
 
 [node name="fumaca" type="AnimationPlayer" parent="Personagem_Naruto"]
 anims/fumaca = SubResource( 1 )
 
 [node name="Shuriken_eClone" type="Position2D" parent="Personagem_Naruto"]
-position = Vector2( 20.9361, 6.23629 )
+position = Vector2( 27.8213, -14.154 )
 scale = Vector2( 0.56, 0.56 )
 
 [node name="fum" type="Sprite" parent="Personagem_Naruto"]
 visible = false
-position = Vector2( 25, -6 )
+position = Vector2( 27.6757, -14.3244 )
 texture = ExtResource( 21 )
 hframes = 5
-frame = 4
+frame = 3
 
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Naruto"]
-position = Vector2( 0.44545, -0.89542 )
+position = Vector2( -1, -3 )
 shape = SubResource( 2 )
 
 [node name="Anima" type="AnimationPlayer" parent="Personagem_Naruto"]
 autoplay = "parado"
+playback_speed = 0.7
 anims/andando = SubResource( 3 )
-anims/ataque_clone = SubResource( 4 )
+anims/atk_alto_baixo = SubResource( 4 )
 anims/atk_shuriken = SubResource( 5 )
 anims/cabecada = SubResource( 6 )
 anims/caindo = SubResource( 7 )
-anims/clone_voando = SubResource( 8 )
-anims/correndo = SubResource( 9 )
+anims/correndo = SubResource( 8 )
+anims/defender = SubResource( 9 )
 anims/jutsu_clone = SubResource( 10 )
 anims/levantar = SubResource( 11 )
 anims/morte = SubResource( 12 )
@@ -5915,10 +7901,8 @@ anims/soco = SubResource( 17 )
 anims/sofrer_dano = SubResource( 18 )
 anims/vitoria = SubResource( 19 )
 
-[node name="Quebra_defesa" parent="Personagem_Naruto" instance=ExtResource( 2 )]
-modulate = Color( 0.137255, 1, 0.0627451, 1 )
-position = Vector2( 19.0021, -7.50662 )
-scale = Vector2( 0.727141, 0.738868 )
+[node name="Mini_HUD" parent="Personagem_Naruto" instance=ExtResource( 1 )]
+position = Vector2( -38.1832, -35.5184 )
 
 [node name="Recebe_dano" type="Area2D" parent="Personagem_Naruto"]
 position = Vector2( 0, -3.8147e-06 )
@@ -5931,11 +7915,31 @@ __meta__ = {
 
 [node name="Colli_dano" type="CollisionShape2D" parent="Personagem_Naruto/Recebe_dano"]
 modulate = Color( 0.600917, 0.598206, 0.945313, 1 )
+position = Vector2( 0, -0.462963 )
 scale = Vector2( 0.993695, 0.885423 )
 shape = SubResource( 20 )
 
-[node name="Mini_HUD" parent="Personagem_Naruto" instance=ExtResource( 1 )]
-position = Vector2( -38.1832, -35.5184 )
+[node name="Socos_chutes" type="Area2D" parent="Personagem_Naruto"]
+collision_layer = 32
+collision_mask = 64
+
+[node name="Colli_socos_chutes" type="CollisionShape2D" parent="Personagem_Naruto/Socos_chutes"]
+position = Vector2( 9.24327, 3.07186 )
+shape = SubResource( 21 )
+disabled = true
+
+[node name="Quebra_defesa" type="Area2D" parent="Personagem_Naruto"]
+collision_layer = 2147483664
+
+[node name="Colli_quebra_def" type="CollisionShape2D" parent="Personagem_Naruto/Quebra_defesa"]
+position = Vector2( 20.433, -13.0679 )
+shape = SubResource( 22 )
+disabled = true
+
+[node name="Colli_quebra_def2" type="CollisionShape2D" parent="Personagem_Naruto/Quebra_defesa"]
+position = Vector2( -3.29953, -28.6699 )
+shape = SubResource( 23 )
+disabled = true
 
 [node name="label" type="Label" parent="Personagem_Naruto"]
 margin_right = 40.0
@@ -5946,9 +7950,10 @@ __meta__ = {
 
 [node name="Personagem_Sasuke" type="KinematicBody2D" parent="."]
 visible = false
-collision_mask = 13
+collision_mask = 12
 script = ExtResource( 40 )
 Velocidade_de_movimento = 200
+veldaMorte = 0
 
 [node name="Camera" type="Camera2D" parent="Personagem_Sasuke"]
 current = true
@@ -5969,13 +7974,12 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="fumaca" type="AnimationPlayer" parent="Personagem_Sasuke"]
-anims/fumaca = SubResource( 21 )
+anims/fumaca = SubResource( 24 )
 
 [node name="img_sasuke" type="Sprite" parent="Personagem_Sasuke"]
 position = Vector2( 0.928772, -5.65274 )
-texture = ExtResource( 43 )
-hframes = 3
-frame = 2
+texture = ExtResource( 22 )
+hframes = 6
 
 [node name="Shuriken_eClone" type="Position2D" parent="Personagem_Sasuke"]
 position = Vector2( 26.8356, -6.0089 )
@@ -5989,29 +7993,29 @@ hframes = 5
 
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Sasuke"]
 position = Vector2( 0.44545, -0.89542 )
-shape = SubResource( 22 )
+shape = SubResource( 25 )
 
 [node name="Anima" type="AnimationPlayer" parent="Personagem_Sasuke"]
 autoplay = "parado"
-anims/andando = SubResource( 23 )
-anims/atk_alto_baixo = SubResource( 24 )
-anims/atk_shuriken = SubResource( 25 )
-anims/caindo = SubResource( 26 )
-anims/correndo = SubResource( 27 )
-anims/defender = SubResource( 28 )
-anims/jutsu_bola_fogo = SubResource( 29 )
-anims/jutsu_bola_fogo_CFogo = SubResource( 30 )
-anims/jutsu_clone = SubResource( 31 )
-anims/levantar = SubResource( 32 )
-anims/morte = SubResource( 33 )
-anims/parado = SubResource( 34 )
-anims/pesada = SubResource( 35 )
-anims/pulando = SubResource( 36 )
-anims/quebra_defesa = SubResource( 37 )
-anims/socao = SubResource( 38 )
-anims/soco = SubResource( 39 )
-anims/sofrer_dano = SubResource( 40 )
-anims/vitoria = SubResource( 41 )
+anims/andando = SubResource( 26 )
+anims/atk_alto_baixo = SubResource( 27 )
+anims/atk_shuriken = SubResource( 28 )
+anims/caindo = SubResource( 29 )
+anims/correndo = SubResource( 30 )
+anims/defender = SubResource( 31 )
+anims/jutsu_bola_fogo = SubResource( 32 )
+anims/jutsu_bola_fogo_CFogo = SubResource( 33 )
+anims/jutsu_clone = SubResource( 34 )
+anims/levantar = SubResource( 35 )
+anims/morte = SubResource( 36 )
+anims/parado = SubResource( 37 )
+anims/pesada = SubResource( 38 )
+anims/pulando = SubResource( 39 )
+anims/quebra_defesa = SubResource( 40 )
+anims/socao = SubResource( 41 )
+anims/soco = SubResource( 42 )
+anims/sofrer_dano = SubResource( 43 )
+anims/vitoria = SubResource( 44 )
 
 [node name="Mini_HUD" parent="Personagem_Sasuke" instance=ExtResource( 1 )]
 position = Vector2( -35.9332, -39.5184 )
@@ -6036,20 +8040,21 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="Colli_socos_chutes" type="CollisionShape2D" parent="Personagem_Sasuke/Socos_chutes"]
-position = Vector2( 20.6082, 20.0491 )
-shape = SubResource( 42 )
+position = Vector2( 7.53112, 18.7028 )
+shape = SubResource( 21 )
+disabled = true
 
 [node name="Quebra_defesa" type="Area2D" parent="Personagem_Sasuke"]
 collision_layer = 2147483664
 
 [node name="Colli_quebra_def" type="CollisionShape2D" parent="Personagem_Sasuke/Quebra_defesa"]
 position = Vector2( 20.433, -13.0679 )
-shape = SubResource( 43 )
+shape = SubResource( 22 )
 disabled = true
 
 [node name="Colli_quebra_def2" type="CollisionShape2D" parent="Personagem_Sasuke/Quebra_defesa"]
 position = Vector2( -3.29953, -25.6699 )
-shape = SubResource( 44 )
+shape = SubResource( 23 )
 disabled = true
 
 [node name="label" type="Label" parent="Personagem_Sasuke"]
@@ -6061,10 +8066,10 @@ __meta__ = {
 }
 
 [node name="Personagem_Sakura" type="KinematicBody2D" parent="."]
-collision_mask = 12
+visible = false
+collision_mask = 13
 script = ExtResource( 41 )
 Velocidade_de_movimento = 200
-veldaMorte = 0
 
 [node name="Camera" type="Camera2D" parent="Personagem_Sakura"]
 current = true
@@ -6086,8 +8091,8 @@ editor_draw_drag_margin = true
 
 [node name="img_sakura" type="Sprite" parent="Personagem_Sakura"]
 position = Vector2( -2, -15.9099 )
-texture = ExtResource( 45 )
-hframes = 6
+texture = ExtResource( 48 )
+hframes = 2
 
 [node name="fumaca" type="AnimationPlayer" parent="Personagem_Sakura"]
 anims/explosao = SubResource( 45 )
@@ -6105,30 +8110,31 @@ texture = ExtResource( 60 )
 hframes = 9
 
 [node name="caixa_colisao" type="CollisionShape2D" parent="Personagem_Sakura"]
-position = Vector2( 0.44545, -0.89542 )
+position = Vector2( 0.44545, 2.10458 )
 shape = SubResource( 47 )
 
 [node name="Anima" type="AnimationPlayer" parent="Personagem_Sakura"]
 autoplay = "parado"
+playback_speed = 0.7
 anims/andando = SubResource( 48 )
-anims/atk_alto_baixo = SubResource( 67 )
-anims/atk_shuriken = SubResource( 49 )
-anims/caindo = SubResource( 50 )
-anims/correndo = SubResource( 51 )
-anims/jutsu_clone = SubResource( 52 )
-anims/jutsu_cura = SubResource( 53 )
-anims/jutsu_socao_chao = SubResource( 54 )
-anims/jutsu_socos = SubResource( 55 )
-anims/levantar = SubResource( 56 )
-anims/morte = SubResource( 57 )
-anims/parado = SubResource( 58 )
-anims/pesada = SubResource( 59 )
-anims/pulando = SubResource( 60 )
-anims/quebra_defesa = SubResource( 61 )
-anims/socao = SubResource( 62 )
-anims/soco = SubResource( 63 )
-anims/sofrer_dano = SubResource( 64 )
-anims/vitoria = SubResource( 65 )
+anims/atk_alto_baixo = SubResource( 49 )
+anims/atk_shuriken = SubResource( 50 )
+anims/caindo = SubResource( 51 )
+anims/correndo = SubResource( 52 )
+anims/jutsu_clone = SubResource( 53 )
+anims/jutsu_cura = SubResource( 54 )
+anims/jutsu_socao_chao = SubResource( 55 )
+anims/jutsu_socos = SubResource( 56 )
+anims/levantar = SubResource( 57 )
+anims/morte = SubResource( 58 )
+anims/parado = SubResource( 59 )
+anims/pesada = SubResource( 60 )
+anims/pulando = SubResource( 61 )
+anims/quebra_defesa = SubResource( 62 )
+anims/socao = SubResource( 63 )
+anims/soco = SubResource( 64 )
+anims/sofrer_dano = SubResource( 65 )
+anims/vitoria = SubResource( 66 )
 
 [node name="Mini_HUD" parent="Personagem_Sakura" instance=ExtResource( 1 )]
 position = Vector2( -37.4332, -41.2684 )
@@ -6153,8 +8159,8 @@ collision_layer = 32
 collision_mask = 64
 
 [node name="Colli_socos_chutes" type="CollisionShape2D" parent="Personagem_Sakura/Socos_chutes"]
-position = Vector2( -0.155235, 1.05282 )
-shape = SubResource( 43 )
+position = Vector2( -2.7364, -21.5393 )
+shape = SubResource( 22 )
 disabled = true
 
 [node name="Quebra_defesa" type="Area2D" parent="Personagem_Sakura"]
@@ -6163,19 +8169,19 @@ collision_layer = 16
 
 [node name="Colli_quebra_def" type="CollisionShape2D" parent="Personagem_Sakura/Quebra_defesa"]
 position = Vector2( 20.433, -13.0679 )
-shape = SubResource( 43 )
+shape = SubResource( 22 )
 disabled = true
 
 [node name="Colli_quebra_def2" type="CollisionShape2D" parent="Personagem_Sakura/Quebra_defesa"]
 position = Vector2( -3.93115, -25.2953 )
-shape = SubResource( 44 )
+shape = SubResource( 23 )
 disabled = true
 
 [node name="Jutsu_terra" type="Area2D" parent="Personagem_Sakura"]
 
 [node name="Colli_jutsu_terra" type="CollisionShape2D" parent="Personagem_Sakura/Jutsu_terra"]
 position = Vector2( 143.316, 11.7748 )
-shape = SubResource( 66 )
+shape = SubResource( 67 )
 disabled = true
 
 [node name="label" type="Label" parent="Personagem_Sakura"]
@@ -6187,6 +8193,7 @@ __meta__ = {
 }
 [connection signal="animation_finished" from="Personagem_Naruto/Anima" to="Personagem_Naruto" method="_on_Anima_animation_finished"]
 [connection signal="area_entered" from="Personagem_Naruto/Recebe_dano" to="Personagem_Naruto" method="_on_Recebe_dano_area_entered"]
+[connection signal="body_entered" from="Personagem_Naruto/Quebra_defesa" to="Personagem_Naruto" method="_on_Quebra_defesa_body_entered"]
 [connection signal="animation_finished" from="Personagem_Sasuke/Anima" to="Personagem_Sasuke" method="_on_Anima_animation_finished"]
 [connection signal="area_entered" from="Personagem_Sasuke/Recebe_dano" to="Personagem_Sasuke" method="_on_Recebe_dano_area_entered"]
 [connection signal="body_entered" from="Personagem_Sasuke/Quebra_defesa" to="Personagem_Sasuke" method="_on_Quebra_defesa_body_entered"]

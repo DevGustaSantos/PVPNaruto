@@ -235,6 +235,7 @@ func _on_Anima_animation_finished(anim_name):
 	if (anim_name == "sofrer_dano" or anim_name == "levantar"):
 		$Anima.play("parado")
 		self.Velocidade_de_movimento = 200
+		cair = false
 		ataque = false
 		dano = false
 	
